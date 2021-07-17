@@ -11,4 +11,9 @@
 ## Detail
 ![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/show.PNG)
 
-
+## User administrator default whit seeders 
+---------------------------------------
+php artisan migrate:fresh --seed
+---------------------------------------
+User: admin@claroinsurance.com
+Password: admin
