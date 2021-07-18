@@ -144,24 +144,6 @@
       </div>
       <div class="md:w-1/2 px-3">
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
-          Email
-        </label>
-        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" value="{{ $listuser->email }}" placeholder="{{ $listuser->email }}" id="email" name="email">
-        @error('email')
-        <p class="border border-red-500 rounded-md bg-red-100 w-full text-red-600 p-2 my-2"> {{ $message }}</p>
-        @enderror
-    </div>
-      <div class="md:w-1/2 px-3">
-        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
-          Identification
-        </label>
-        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" value="{{ $listuser->identification }}" placeholder="{{ $listuser->identification }}" id="identification" name="identification">
-        @error('identification')
-        <p class="border border-red-500 rounded-md bg-red-100 w-full text-red-600 p-2 my-2"> {{ $message }}</p>
-        @enderror
-    </div>
-      <div class="md:w-1/2 px-3">
-        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
           Phone
         </label>
         <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"  value="{{ $listuser->phone }}" placeholder="{{ $listuser->phone }}" id="phone" name="phone">
@@ -177,7 +159,7 @@
             </label>
             <div class="relative">
               <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"  value="{{ $listuser->namedpto }}" name="namedpto">
-                <option>{{$listuser->namedpto}}</option>
+                <option>Option</option>
                 @foreach ($Departments as $department)
                <option value="{{ $department->namedpto }}">{{ $department->namedpto }}</option>
               @endforeach
@@ -193,7 +175,7 @@
         </label>
         <div class="relative">
           <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" value="{{ $listuser->namecity }}" name="namecity" value="id">
-            <option>{{$listuser->namecity}}</option>
+            <option>Option</option>
             @foreach ($Cities as $city)
             <option value="{{ $city->namecity }}">{{ $city->namecity }}</option>
            @endforeach
