@@ -97,9 +97,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $listuser)
+   public function update(Request $request, User $listuser)
     {
-        $data = $request->only('name', 'email', 'identification', 'phone', 'namedpto', 'namecity', 'birth_date');
+        $data = $request->only('name', 'phone', 'namedpto', 'namecity', 'birth_date');
         $listuser->update($data);
 
        return redirect()->route('listusers.index')->with('status', 'User updated successfully');
