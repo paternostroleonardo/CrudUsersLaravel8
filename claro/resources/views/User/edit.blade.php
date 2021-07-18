@@ -130,13 +130,13 @@
 <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
     <div class="-mx-3 md:flex mb-6">
       <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-        <form action="{{ url('/listusers/'.$user) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('listusers.update', $listuser->id ) }}" method="post" enctype="multipart/form-data">
             @csrf
-            {{ method_field('PUT') }}
+            @method('PUT')
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
           Name
         </label>
-        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" value="{{ $user[0]->name }}" placeholder="{{ $user[0]->name }}" id="name" name="name">
+        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" value="{{ $listuser->name }}" placeholder="{{ $listuser->name }}" id="name" name="name">
         @error('name')
         <p class="border border-red-500 rounded-md bg-red-100 w-full text-red-600 p-2 my-2"> {{ $message }}</p>
         @enderror
@@ -145,7 +145,7 @@
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
           Email
         </label>
-        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" value="{{ $user[0]->email }}" placeholder="{{ $user[0]->email }}" id="email" name="email">
+        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" value="{{ $listuser->email }}" placeholder="{{ $listuser->email }}" id="email" name="email">
         @error('email')
         <p class="border border-red-500 rounded-md bg-red-100 w-full text-red-600 p-2 my-2"> {{ $message }}</p>
         @enderror
@@ -154,7 +154,7 @@
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
           Identification
         </label>
-        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" value="{{ $user[0]->identification }}" placeholder="{{ $user[0]->identification }}" id="identification" name="identification">
+        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" value="{{ $listuser->identification }}" placeholder="{{ $listuser->identification }}" id="identification" name="identification">
         @error('identification')
         <p class="border border-red-500 rounded-md bg-red-100 w-full text-red-600 p-2 my-2"> {{ $message }}</p>
         @enderror
@@ -163,7 +163,7 @@
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
           Phone
         </label>
-        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"  value="{{ $user[0]->phone }}" placeholder="{{ $user[0]->phone }}" id="phone" name="phone">
+        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"  value="{{ $listuser->phone }}" placeholder="{{ $listuser->phone }}" id="phone" name="phone">
         @error('phone')
         <p class="border border-red-500 rounded-md bg-red-100 w-full text-red-600 p-2 my-2"> {{ $message }}</p>
         @enderror
@@ -175,8 +175,8 @@
               Department
             </label>
             <div class="relative">
-              <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"  name="namedpto" value="id">
-                <option>{{$user[0]->namedpto}}</option>
+              <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"  value="{{ $listuser->namedpto }}" name="namedpto">
+                <option>{{$listuser->namedpto}}</option>
                 @foreach ($Departments as $department)
                <option value="{{ $department->namedpto }}">{{ $department->namedpto }}</option>
               @endforeach
@@ -191,8 +191,8 @@
           City
         </label>
         <div class="relative">
-          <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" value="{{ $user[0]->namecity }}" name="namecity" value="id">
-            <option>{{$user[0]->namecity}}</option>
+          <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" value="{{ $listuser->namecity }}" name="namecity" value="id">
+            <option>{{$listuser->namecity}}</option>
             @foreach ($Cities as $city)
             <option value="{{ $city->namecity }}">{{ $city->namecity }}</option>
            @endforeach
@@ -206,7 +206,7 @@
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
             Birth Date
         </label>
-        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" value="{{ $user[0]->birth_date }}" placeholder="birth-date" id="birth_date" name="birth_date" type="datetime-local" value="birth_date">
+        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" value="{{ $listuser->birth_date }}" placeholder="birth-date" id="birth_date" name="birth_date" type="datetime-local" >
       </div>
     </div>
     <button type="submit" class="mt-12 rounded-md bg-indigo-500 text-lg text-white font-semibold p-2 my-2 hover:bg-indigo-600"> Save </button>
