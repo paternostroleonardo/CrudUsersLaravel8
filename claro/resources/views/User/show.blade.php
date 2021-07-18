@@ -132,7 +132,7 @@
                     <div class="flex-none sm:flex">
                         <div class=" relative h-32 w-32   sm:mb-0 mb-3">
                             <img src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg" alt="aji" class=" w-32 h-32 object-cover rounded-2xl">
-                            <a href="#"
+                            <a href="{{ url('/listusers/'.$listuser->id.'/edit') }}"
                                 class="absolute -right-2 bottom-2   -ml-3  text-white p-1 text-xs bg-green-400 hover:bg-green-500 font-medium tracking-wider rounded-full transition ease-in duration-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                     class="h-4 w-4">
@@ -149,7 +149,7 @@
                                         <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none"></div>
                                         <div class="flex-auto text-gray-500 my-1">
 
-                                            <p><b>Name</b></p><span class="mr-3 ">{{ $user[0]->name }} </span>|<span class="mr-3 border-r border-gray-500  max-h-0 inline-block"></span><span> {{ $user[0]->email }} </span>
+                                            <p><b>Name</b></p><span class="mr-3 ">{{ $listuser->name }} </span>|<span class="mr-3 border-r border-gray-500  max-h-0 inline-block"></span><span> {{ $listuser->email }} </span>
                                         </div>
                                     </div>
                                 </div>
@@ -204,10 +204,10 @@
                                             10c4.42 0 8 1.79 8
                                             4v2H4v-2c0-2.21 3.58-4 8-4z"></path>
                                     </svg>
-                                        <p class=""> ID {{ $user[0]->identification }}</p>
+                                        <p class=""> ID {{ $listuser->identification }}</p>
                                         <svg class="h-5 w-5 fill-current
                                         dark:text-gray-300  ml-3" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path></svg>
-                                    <p class="">Phone {{ $user[0]->phone }}</p>
+                                    <p class="">Phone {{ $listuser->phone }}</p>
                                     <svg
                                     class="h-5 w-5 fill-current
                                     dark:text-gray-300 mr-1 ml-3"
@@ -219,14 +219,16 @@
                                         0 002-2V5a2 2 0 00-2-2h-1V1m-1
                                         11h-5v5h5v-5z"></path>
                                 </svg>
-                                <p class="">{{ $user[0]->birth_date }}</p>
+                                <p class="">{{ $listuser->birth_date }}</p>
                                 <svg class="h-5 w-5 fill-current
                                 dark:text-gray-300 mr-1 ml-3" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"/>
                                   </svg>
-                            <p class="">{{ $user[0]->namecity }}</p>
+                            <p class="">{{ $listuser->namecity }}</p>
                                     </div>
+                                    <a href="{{ url('/listusers/'.$listuser->id.'/edit') }}">
                                     <button  class="flex-no-shrink bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300">Edit</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
