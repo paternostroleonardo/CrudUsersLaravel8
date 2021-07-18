@@ -85,12 +85,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $listuser)
     {
-        $user = DB::table('users')->where('id', $id)->get();
         $Cities = City::all();
         $Departments = Department::all();
-        return view('User/edit', compact('user', 'Cities', 'Departments'));
+        return view('User/edit', compact('listuser', 'Cities', 'Departments'));
     }
 
     /**
@@ -100,9 +99,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $listuser)
     {
-       $user->update($request->all());
+        $data = $request->only('name', 'email', 'identification', 'phone', 'namedpto', 'namecity', 'birth_date');
+        $listuser->update($data);
+
        return redirect()->route('listusers.index')->with('status', 'User updated successfully');
     }
 
