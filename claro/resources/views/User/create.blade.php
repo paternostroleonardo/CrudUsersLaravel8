@@ -58,8 +58,7 @@
 		<ul class="mt-2 text-gray-600">
 			<!-- Links -->
 			<li class="mt-8">
-				<a href="#home" class="flex ">
-					<svg
+				<a href="{{ url('/listusers') }}" class="flex inline-block"><svg
 						class="fill-current h-5 w-5 text-yellow-400"
 						viewBox="0 0 24 24">
 						<path
@@ -68,7 +67,7 @@
 							4h4v-4h-4M4 8h4V4H4v4z"></path>
 					</svg>
 					<span
-						class="ml-2 capitalize font-medium text-gray-100
+						class="ml-3 capitalize font-medium text-gray-100
 						text-gray-100">
 						dashboard
 					</span>
@@ -97,7 +96,8 @@
 				class="mt-8 shadow py-2 bg-white hover:bg-yellow-400 hover:text-gray-100 bg-gray-100 rounded-lg
 				-ml-4">
 				<a href="#home" class="flex pl-4">
-					<svg class="fill-current h-5 w-5" viewBox="0 0 24 24">
+                    <a href="{{ url('/listusers/'.auth()->user()->id) }}" class="flex inline-block">
+					<svg class="fill-current h-7 w-5 ml-2" viewBox="0 0 24 24">
 						<path
 							d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0
 							014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4
