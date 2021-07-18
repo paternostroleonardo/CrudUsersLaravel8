@@ -72,11 +72,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $listuser)
     {
-        $user = DB::table('users')->where('id', $id)->get();
-
-        return view('User/show', compact('user'));
+        return view('User/show', compact('listuser'));
     }
 
     /**
