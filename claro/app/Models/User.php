@@ -62,4 +62,20 @@ class User extends Authenticatable
     public function getAgeAttribute(){
         return Carbon::parse($this->attributes["birth_date"])->age;
     }
+     /**
+     * query scope para filtrado
+     */
+    public function scopeName($query, $name){
+        if($name)
+        return $query->where('name', 'LIKE', "%$name%");
+    }
+    public function scopeEmail($query, $email){
+        if($email)
+        return $query->where('email', 'LIKE', "%$email%");
+    }
+    public function scopeIdentification($query, $identification){
+        if($identification)
+        return $query->where('identification', 'LIKE', "%$identification%");
+    }
+
 }
