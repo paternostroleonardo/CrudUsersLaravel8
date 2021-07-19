@@ -241,7 +241,7 @@
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $user->id }}
+                                        {{ $user->age }}
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -281,6 +281,10 @@
                                 </tr>
                                 @endforeach
                             </tbody>
+                            <span class="text-indigo-500 hover:text-green-500 dark-hover:text-green-300
+                            cursor-pointer mr-3 transition duration-500 ease-in-out">
+                            {{$users->links()}}
+                            </span>
                         </table>
                     </div>
                 </div>
