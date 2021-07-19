@@ -177,11 +177,24 @@
 								128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
 						</svg>
 					</span>
-
+                    <form>
 					<input
+                        name="name"
+                        value="{{ $name }}"
 						class="w-24 bg-transparent focus:outline-none"
-						placeholder="Search" />
-
+						placeholder="Search name" />
+                        <button class="ml-3 py-2 px-2 text-white
+                        text-gray-100 bg-indigo-500 dark:bg-green-500 rounded-lg shadow" type="submit">Find</button>
+                </form>
+                <form>
+					<input
+                        name="identification"
+                        value="{{ $identification }}"
+						class="px-3 w-24 bg-transparent focus:outline-none"
+						placeholder="Search ID" />
+                        <button class="py-2 px-2 text-white
+                        text-gray-100 bg-indigo-500 dark:bg-green-500 rounded-lg shadow" type="submit">Find</button>
+                </form>
 				</div>
 
 			</nav>
