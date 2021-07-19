@@ -16,10 +16,17 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
+    /**
+     * Vista con paginado de 5 en 5 y filtrado de names y cedulas
+     *
+     * */
     {
-        $users = User::paginate(5);
-        return view('User/listusers', compact('users'));
+        $name = $request->get('name');
+        $identification = $request->get('identification');
+        $users = User::where('name', 'Like', '%'.$name.'%')->where('identification', 'Like', '%'.$identification.'%')
+        ->paginate(5);
+        return view('User/listusers', compact('users', 'name', 'identification'));
     }
 
     /**
@@ -98,7 +105,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   public function update(Request $request, User $listuser)
+    public function update(Request $request, User $listuser)
     {
         $data = $request->only('name', 'phone', 'namedpto', 'namecity', 'birth_date');
         $listuser->update($data);
