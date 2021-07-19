@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\City;
 use App\Models\Department;
+use App\Models\userActivityLog;
 use Carbon\Carbon;
 use DB;
 
@@ -107,9 +108,42 @@ class UserController extends Controller
      */
     public function update(Request $request, User $listuser)
     {
-        $data = $request->only('name', 'phone', 'namedpto', 'namecity', 'birth_date');
-        $listuser->update($data);
 
+    /**
+     * Se actualizan los datos del formulario
+     */
+
+        $data = $request->only([
+            $name = 'name',
+            $phone = 'phone',
+            $namedpto = 'namedpto',
+            $namecity = 'namecity',
+            $birth_date = 'birth_date'
+        ]);
+
+        $name = $request->name;
+        $phone = $request->phone;
+        $namedpto = $request->namedpto;
+        $namecity = $request->namecity;
+        $birth_date = $request->birth_date;
+
+        $dt = Carbon::now();
+        $todayDate = $dt->toDayDateTimeString();
+
+
+        $activityLog = [
+            'name' => $name,
+            'phone' => $phone,
+            'namedpto' => $namedpto,
+            'namecity' => $namecity,
+            'birth_date' => $birth_date,
+            'modify_user' => 'Update',
+            'date_time' => $todayDate
+        ];
+
+        userActivityLog::where('user_activity_logs')->insert($activityLog);
+
+        $listuser->update($data);
        return redirect()->route('listusers.index')->with('status', 'User updated successfully');
     }
 
