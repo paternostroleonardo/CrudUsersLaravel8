@@ -8,6 +8,8 @@
 ![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/listusers.PNG)
 ## Create-Users
 ![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/create.PNG)
+## Edit
+![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/edit.PNG)
 ## Detail
 ![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/show.PNG)
 
