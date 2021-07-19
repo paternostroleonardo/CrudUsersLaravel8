@@ -5,7 +5,7 @@
 ## Register
 ![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/register.PNG)
 ## Users
-![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/listuses.PNG)
+![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/listusers.PNG)
 ## Create-Users
 ![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/create.PNG)
 ## Detail
