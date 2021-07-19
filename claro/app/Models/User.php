@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -54,5 +55,11 @@ class User extends Authenticatable
      */
     public function city() {
         return $this->hasOneThrough(City::class);
+    }
+    /**
+     * Calculando y retornando la edad de cada users a partir de la fecha de nacimiento con carbon
+     */
+    public function getAgeAttribute(){
+        return Carbon::parse($this->attributes["birth_date"])->age;
     }
 }
