@@ -1,7 +1,14 @@
 # Crud de usuarios
 
-## Carpetas Raiz
-![alt text](https://github.com/paternostroleonardo/CloudApp/blob/main/principal.PNG)
-![alt text](https://github.com/paternostroleonardo/CloudApp/blob/main/subcarpeta1.PNG)
-![alt text](https://github.com/paternostroleonardo/CloudApp/blob/main/subcarpetadesubcarpeta.PNG)
-![alt text](https://github.com/paternostroleonardo/CloudApp/blob/main/result.PNG)
+## Login
+![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/login.PNG)
+## Register
+![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/register.PNG)
+## Users
+![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/listusers.PNG)
+## Create-Users
+![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/create.PNG)
+## Edit
+![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/edit.PNG)
+## Detail
+![alt text](https://github.com/paternostroleonardo/CrudUsersLaravel8/blob/main/show.PNG)
